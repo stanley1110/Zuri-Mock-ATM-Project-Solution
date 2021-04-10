@@ -3,7 +3,7 @@ from datetime import datetime
 import time
 
 
-    
+   #progrma entry point to login, registration and bank operations...... 
 def init():
     isvalidOptionSelected = False
     print("welcome to Access Grant Bank")
@@ -26,6 +26,7 @@ def init():
             print("Invalid Selection")
             init()
 
+# Implementation of registeration function with dictionary database and account number generation 
 def register():
     print("You are welcome to the registeration page")
     email =  str(input("What is your email address: \n" ))
@@ -50,6 +51,7 @@ def register():
 
 database = {}
 
+# implementation account number generation method with imported "random" function
 def generateAccountNo():
     for userDetails in database.items():
         firstName = userDetails[1]
@@ -62,11 +64,11 @@ def generateAccountNo():
 def getAccountNumber():
     
         pass
+        
     
-    
 
 
-
+#Login feature Implementation with authentication of userId with database account number or email and authentication of user password with database password
 def login():
     print("******Login Portal******")
     isLoginSuccessfull = False
@@ -85,7 +87,7 @@ def login():
         print("invalid Account or Password")
     bankOperations()
 
-
+# bank operation function implementation with option routing back to login after each transaction or exiting the program
 def bankOperations():
     for accountNumber, userDetails in database.items():
         print("You are welcome to Operations " + userDetails[1])
@@ -155,10 +157,13 @@ Select 2 to exit the program \n"""))
         logout()
     else:
         print("Selection not valid")
-    
+
+
+ #IMplementation of logout feature   
 def logout():
     quit()
 
+#Starts up the program
 init()
 
     
